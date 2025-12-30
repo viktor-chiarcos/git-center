@@ -15,6 +15,8 @@ def ChangePathButton():
 	Path = input("Repository Path (start with / or ~): ")
 	App.title(f"{Path} - Git Center")
 	print(f"==========ChangePathButton() is finneshed. Git Center ready for the next comannd==========")
+def CloseButton():
+	quit()
 
 
 git_path_local = Path.cwd()
@@ -29,6 +31,7 @@ GitPull = Button(App, text="Git Pull" , command=GitPullButton)
 GitPull.pack()
 ChangePath = Button(App, text="Change Path", command=ChangePathButton)
 ChangePath.pack()
+Close = Button(App, text="Quit Git Center", command=CloseButton)
 TextLabel = Label(App, text="								Please Start this app with a terminal									")
 TextLabel.pack()
 App.mainloop()

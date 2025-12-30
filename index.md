@@ -34,3 +34,10 @@ permalink: /
 
 		./git-center
 
+# Updaten - Aktuallisieren
+
+Du kannst nur aktuallisieren wenn du git oder GitHub CLI verwendet hast.
+
+cd [Pfad vom Repository]
+git pull
+

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: html
 title: Git Center | Die App für Git-Befehle
 permalink: /
 ---

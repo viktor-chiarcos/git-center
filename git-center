@@ -9,8 +9,8 @@ def GitCommitAndPushButton():
 	os.system(f'cd {Path} ; git add * ; git commit -a -m "committed with git-center from viktor-chiarcos" ; git pull ; git push ')
 	print(f"==========GitCommitAndPushButton() is fineshed. Git Center ready for the next comannd==========")
 def GitCommitWithYourOwnMessageButton():
-	Message=input("Enter your Commit Message: ")
-	os.system(f"cd {Path} ; git add * ; git commit -a -m '{Message}'")
+	Message=input("Warning: This Script don't allow this symbols: ''\nEnter your Commit Message: ")
+	os.system(f'cd {Path} ; git add * ; git commit -a -m "{Message}"')
 	print(f"==========GitCommitWIthYourOwnMessageButton() is fineshed. Git Center ready for the next comannd==========")
 	CommitMessage=True
 def GitPullButton():

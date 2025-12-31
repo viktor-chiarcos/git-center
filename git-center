@@ -39,7 +39,7 @@ Path = git_path_local
 App.title(f"{Path} - Git Center")
 GitCommit = Button(App, text="Commit and Push" , command=GitCommitAndPushButton)
 GitCommit.pack()
-GitCreateMessage=Button(App, text="Commit with your own Message", command=GitCommitAndPushButton)
+GitCreateMessage=Button(App, text="Commit with your own Message", command=GitCommitWithYourOwnMessageButton)
 GitCreateMessage.pack()
 GitPull = Button(App, text="Pull" , command=GitPullButton)
 GitPull.pack()

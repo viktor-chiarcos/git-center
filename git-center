@@ -3,7 +3,8 @@ from tkinter import Tk as App
 from tkinter import *
 import os
 from pathlib import Path
-CommitMessage=False
+import argparse
+Committed=False
 
 def GitCommitAndPushButton():
 	os.system(f'cd {Path} ; git add * ; git commit -a -m "committed with git-center from viktor-chiarcos" ; git pull ; git push ')
@@ -12,27 +13,39 @@ def GitCommitWithYourOwnMessageButton():
 	Message=input("Warning: This Script don't allow this symbols: ''\nEnter your Commit Message: ")
 	os.system(f'cd {Path} ; git add * ; git commit -a -m "{Message}"')
 	print(f"==========GitCommitWIthYourOwnMessageButton() is fineshed. Git Center ready for the next comannd==========")
-	CommitMessage=True
+	Committed=True
 def GitPullButton():
 	os.system(f"cd {Path} ; git pull")
 	print(f"==========GitPullButton() is fineshed. Git Center ready for the next command==========")
+"""
 def ChangePathButton():
 	Path = input("Repository Path (start with / or ~): ")
 	App.title(f"{Path} - Git Center")
-	CommitMessage=False
+	Committed=False
+	git_path_local = Path.cwd()
+	App = App()
+	App.title("python3.11 - Git Center")
+	Path = git_path_local
 	print(f"==========ChangePathButton() is fineshed. Git Center ready for the next command==========")
+"""
 def CloseButton():
 	quit()
 def GitPushButton():
-	if CommitMessage==True:
+	if Committed==True:
 		os.system("git push")
 	else:
 		print("Your don't committed your changes!")
 	print(f"==========GitPushButton() is fineshed. Git Center ready for the next command==========")
 
-
+import argparse
+import os
+parser = argparse.ArgumentParser(description='')
+parser.add_argument('--path', default="", help='Ändert den Pfad für den Start')
+#parser.add_argument('--value', required=True, default="[echo.v] Fehler: Argument --value erforderlich", help='Text in Anführungszeichen ("") angeben')
+args = parser.parse_args()
 git_path_local = Path.cwd()
-
+if args.path!="":
+	git_path_local=args.path 
 App = App()
 App.title("python3.11 - Git Center")
 Path = git_path_local
@@ -47,8 +60,8 @@ GitPull = Button(App, text="Pull" , command=GitPullButton)
 GitPull.pack()
 GitPush=Button(App, text="Push", command=GitPushButton)
 GitPush.pack()
-ChangePath = Button(App, text="Change Path", command=ChangePathButton)
-ChangePath.pack()
+#ChangePath = Button(App, text="Change Path", command=ChangePathButton)
+#ChangePath.pack()
 Close = Button(App, text="Quit Git Center", command=CloseButton)
 Close.pack()
 TextLabel = Label(App, text="	     Please Start this app with a terminal		")

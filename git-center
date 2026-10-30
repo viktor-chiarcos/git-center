@@ -6,6 +6,7 @@ from pathlib import Path
 import argparse
 Committed=False
 
+
 def GitCommitAndPushButton():
 	os.system(f'cd {Path} ; git add * ; git commit -a -m "committed with git-center from viktor-chiarcos" ; git pull ; git push ')
 	print(f"==========GitCommitAndPushButton() is fineshed. Git Center ready for the next comannd==========")

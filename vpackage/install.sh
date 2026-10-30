@@ -7,5 +7,7 @@ then cd ~/bin ; wget https://raw.githubusercontent.com/viktor-chiarcos/git-cente
 else mkdir ~/bin ; cd ~/bin ; wget https://raw.githubusercontent.com/viktor-chiarcos/git-center/refs/heads/master/git-center
 fi
 echo "Installation fertig"
+echo -n "Git Center wird ausführbar gemacht..."
+chmod a+x ~/bin/git-center
 echo "Starte git-center"
 git-center

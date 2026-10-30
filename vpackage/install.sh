@@ -9,5 +9,6 @@ fi
 echo "Installation fertig"
 echo -n "Git Center wird ausführbar gemacht..."
 chmod a+x ~/bin/git-center
+echo -n "Git Center wurde ausführbar gemacht. "
 echo "Starte git-center"
 git-center
